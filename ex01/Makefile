@@ -1,7 +1,8 @@
 NAME			:=	ex01
 
 SRCS			:=	main.cpp \
-					FragTrap.cpp
+					FragTrap.cpp \
+					ScavTrap.cpp
 
 SRCS_DIR		:=	./srcs/
 HEADERS_DIR		:=	./headers/

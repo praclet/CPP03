@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 11:17:57 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/26 11:24:48 by praclet          ###   ########lyon.fr   */
+/*   Created: 2021/03/26 10:27:28 by praclet           #+#    #+#             */
+/*   Updated: 2021/03/26 11:24:30 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include <string>
 #include <iostream>
 
-FragTrap::FragTrap()
+ScavTrap::ScavTrap()
 {
 }
 
-FragTrap::FragTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
+ScavTrap::ScavTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
    	_energyPoints(100),	_maxEnergyPoints(100), _level(1),
-	_meleeAttackDamage(30), _rangedAttackDamage(20), _armorDamageReduction(5),
+	_meleeAttackDamage(20), _rangedAttackDamage(15), _armorDamageReduction(3),
 	_name(name)
 {
 }
 
-FragTrap::FragTrap(FragTrap const & src)
+ScavTrap::ScavTrap(ScavTrap const & src)
 {
 	*this = src;
 }
 
-FragTrap::~FragTrap()
+ScavTrap::~ScavTrap()
 {
 }
 
-void FragTrap::_checkVitals(void)
+void ScavTrap::_checkVitals(void)
 {
 	if (_hitPoints < 0)
 		_hitPoints = 0;
@@ -46,7 +46,7 @@ void FragTrap::_checkVitals(void)
 		_energyPoints = _maxEnergyPoints;
 }
 
-FragTrap & FragTrap::operator = (FragTrap const & src)
+ScavTrap & ScavTrap::operator = (ScavTrap const & src)
 {
 	_hitPoints = src._hitPoints;
 	_maxHitPoints = src._maxHitPoints;
@@ -60,59 +60,49 @@ FragTrap & FragTrap::operator = (FragTrap const & src)
 	return (*this);
 }
 
-void FragTrap::rangedAttack(std::string const & target)
+void ScavTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
+	std::cout << "SCAV-TP " << _name << " attacks " << target;
 	std::cout << " at range, causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 }
 
-void FragTrap::meleeAttack(std::string const & target)
+void ScavTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
+	std::cout << "SCAV-TP " << _name << " attacks " << target;
 	std::cout << " at melee distance, causing " << _meleeAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 }
 
-void FragTrap::takeDamage(unsigned int amount)
+void ScavTrap::takeDamage(unsigned int amount)
 {
 	_hitPoints -= amount - _armorDamageReduction;
 	_checkVitals();
-	std::cout << "FR4G-TP " << _name << " takes " << amount;
+	std::cout << "SCAV-TP " << _name << " takes " << amount;
 	std::cout << " damages (before armor damage reduction) and has now ";
 	std::cout << _hitPoints << " hit points.";
 	std::cout << std::endl;
 }
 
-void FragTrap::beRepaired(unsigned int amount)
+void ScavTrap::beRepaired(unsigned int amount)
 {
 	_hitPoints += amount;
 	_checkVitals();
-	std::cout << "FR4G-TP " << _name << " gains " << amount;
+	std::cout << "SCAV-TP " << _name << " gains " << amount;
 	std::cout << " hit points and has now " << _hitPoints << " hit points.";
 	std::cout << std::endl;
 }
 
-void FragTrap::vaulthunter_dot_exe(std::string const & target)
+void ScavTrap::challengeNewComer(std::string const & target)
 {
-	std::string const attack[]={"a random attack of ranged type",
-		"a random attack of melee type",
-		"another random attack of ranged type",
-		"an attack which hurts",
-		"an attack which hurts even more",
-		"an attack which would have hurt if you were an infant"};
+	std::string const challenges[]={"a challenge",
+		"a witty challenge",
+		"a funny challenge",
+		"another type of funny challenge with references to some obscure TV series",
+		"another funny challenge (based on a pony story)",
+		"another witty challenge (for nerds)"};
 	
-	if (_energyPoints < 25)
-	{
-		std::cout << "FR4G-TP " << _name << " can't launch vaulthunter_dot_exe.";
-		std::cout << std::endl;
-		return ;
-	}
-	_energyPoints -= 25;
-	_checkVitals();
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
-	std::cout << " with " << attack[std::rand() % 6] << ", causing "; 
-	std::cout << _meleeAttackDamage << " points of damage!" << std::endl;
-	std::cout << "It, now, has " << _energyPoints << " energy points." << std::endl;
+	std::cout << "SCAV-TP " << _name << " challenges " << target;
+	std::cout << " with " << challenges[std::rand() % 6] << "." << std::endl;
 }
 

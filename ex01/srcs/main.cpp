@@ -6,13 +6,14 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:49:58 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/24 16:05:43 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/26 11:23:16 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <chrono>
 #include <iostream>
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
@@ -38,4 +39,25 @@ int main(void)
 	n4->vaulthunter_dot_exe("Number one");
 	n4->beRepaired(120);
 	delete n4;
+
+	ScavTrap n8("Number eight");
+	n8.rangedAttack("Mob #30");
+	n8.takeDamage(12);
+	n8.takeDamage(25);
+	n8.meleeAttack("Mob #5");
+	n8.meleeAttack("Mob #2");
+	n8.takeDamage(250);
+
+	ScavTrap *n10 = new ScavTrap("Number 10");
+	n10->takeDamage(25);
+	n10->takeDamage(200);
+	n10->challengeNewComer("some guy");
+	n10->challengeNewComer("some guy");
+	n10->beRepaired(12);
+	n10->challengeNewComer("some guy");
+	n10->challengeNewComer("some guy");
+	n10->beRepaired(12);
+	n10->challengeNewComer("some guy");
+	n10->beRepaired(120);
+	delete n10;
 };
