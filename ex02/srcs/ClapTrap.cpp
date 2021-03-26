@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:42:51 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/26 13:56:14 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/26 16:36:42 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ ClapTrap::ClapTrap()
 {
 }
 
-ClapTrap::ClapTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
-   	_energyPoints(100),	_maxEnergyPoints(100), _level(1),
-	_meleeAttackDamage(30), _rangedAttackDamage(20), _armorDamageReduction(5),
-	_name(name)
+ClapTrap::ClapTrap(std::string name) : _name(name)
 {
 }
 

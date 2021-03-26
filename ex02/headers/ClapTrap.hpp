@@ -6,17 +6,18 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:43:01 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/26 13:45:43 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/26 16:59:11 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-#include <string>
+# include <string>
 
 class ClapTrap
 {
+	protected:
 		int _hitPoints;
 		int _maxHitPoints;
 		int _energyPoints;

@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:18:11 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/26 13:37:33 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/26 17:00:02 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 # define FRAGTRAP_HPP
 
 # include <string>
+# include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap
 {
+	protected:
 		FragTrap();
 	public:
 		FragTrap(std::string name);

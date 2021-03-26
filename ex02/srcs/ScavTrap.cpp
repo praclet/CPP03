@@ -6,10 +6,11 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 10:27:28 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/26 13:37:17 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/26 17:07:18 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include <string>
 #include <iostream>
@@ -18,11 +19,16 @@ ScavTrap::ScavTrap()
 {
 }
 
-ScavTrap::ScavTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
-   	_energyPoints(100),	_maxEnergyPoints(100), _level(1),
-	_meleeAttackDamage(20), _rangedAttackDamage(15), _armorDamageReduction(3),
-	_name(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
+	_hitPoints = 100; 
+	_maxHitPoints = 100;
+   	_energyPoints = 100;	
+	_maxEnergyPoints = 100; 
+	_level = 1;
+	_meleeAttackDamage = 20; 
+	_rangedAttackDamage = 15; 
+	_armorDamageReduction = 3;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src)
