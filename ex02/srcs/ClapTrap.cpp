@@ -1,0 +1,94 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/26 13:42:51 by praclet           #+#    #+#             */
+/*   Updated: 2021/03/26 13:56:14 by praclet          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+#include <string>
+#include <iostream>
+
+ClapTrap::ClapTrap()
+{
+}
+
+ClapTrap::ClapTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
+   	_energyPoints(100),	_maxEnergyPoints(100), _level(1),
+	_meleeAttackDamage(30), _rangedAttackDamage(20), _armorDamageReduction(5),
+	_name(name)
+{
+}
+
+ClapTrap::ClapTrap(ClapTrap const & src)
+{
+	*this = src;
+}
+
+ClapTrap::~ClapTrap()
+{
+}
+
+void ClapTrap::_checkVitals(void)
+{
+	if (_hitPoints < 0)
+		_hitPoints = 0;
+	if (_energyPoints < 0)
+		_energyPoints = 0;
+	if (_hitPoints > _maxHitPoints)
+		_hitPoints = _maxHitPoints;
+	if (_energyPoints > _maxEnergyPoints)
+		_energyPoints = _maxEnergyPoints;
+}
+
+ClapTrap & ClapTrap::operator = (ClapTrap const & src)
+{
+	_hitPoints = src._hitPoints;
+	_maxHitPoints = src._maxHitPoints;
+	_energyPoints = src._energyPoints;
+	_maxEnergyPoints = src._maxEnergyPoints;
+	_level = src._level;
+	_name = src._name;
+	_meleeAttackDamage = src._meleeAttackDamage;
+	_rangedAttackDamage = src._rangedAttackDamage;
+	_armorDamageReduction = src._armorDamageReduction;
+	return (*this);
+}
+
+void ClapTrap::rangedAttack(std::string const & target)
+{
+	std::cout << "CLAPTRAP " << _name << " attacks " << target;
+	std::cout << " at range, causing " << _rangedAttackDamage;
+	std::cout << " points of damage!" << std::endl;
+}
+
+void ClapTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "CLAPTRAP " << _name << " attacks " << target;
+	std::cout << " at melee distance, causing " << _meleeAttackDamage;
+	std::cout << " points of damage!" << std::endl;
+}
+
+void ClapTrap::takeDamage(unsigned int amount)
+{
+	_hitPoints -= amount - _armorDamageReduction;
+	_checkVitals();
+	std::cout << "CLAPTRAP " << _name << " takes " << amount;
+	std::cout << " damages (before armor damage reduction) and has now ";
+	std::cout << _hitPoints << " hit points.";
+	std::cout << std::endl;
+}
+
+void ClapTrap::beRepaired(unsigned int amount)
+{
+	_hitPoints += amount;
+	_checkVitals();
+	std::cout << "CLAPTRAP " << _name << " gains " << amount;
+	std::cout << " hit points and has now " << _hitPoints << " hit points.";
+	std::cout << std::endl;
+}
