@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:42:51 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/28 17:28:10 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 17:52:38 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,19 @@ ClapTrap::ClapTrap(ClapTrap const & src) : _hitPoints(src._hitPoints),
 	_maxEnergyPoints(src._maxEnergyPoints), _level(src._level),
 	_meleeAttackDamage(src._meleeAttackDamage), _rangedAttackDamage(src._rangedAttackDamage),
 	_armorDamageReduction(src._armorDamageReduction), _name(src._name)
+{
+}
+
+ClapTrap::ClapTrap(unsigned int hitPoints, unsigned int maxHitPoints,
+	unsigned int energyPoints, unsigned int maxEnergyPoints,
+	unsigned int level, unsigned int meleeAttackDamage,
+	unsigned int rangedAttackDamage,
+	unsigned int armorDamageReduction, std::string name) :
+	_hitPoints(hitPoints), _maxHitPoints(maxHitPoints),
+	_energyPoints(energyPoints), _maxEnergyPoints(maxEnergyPoints),
+	_level(level), _meleeAttackDamage(meleeAttackDamage),
+	_rangedAttackDamage(rangedAttackDamage),
+	_armorDamageReduction(armorDamageReduction), _name(name)
 {
 }
 

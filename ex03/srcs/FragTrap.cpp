@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:17:57 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/26 17:11:36 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 17:51:22 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,14 @@ FragTrap::FragTrap()
 {
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name)
+	: ClapTrap(100, 100, 100, 100, 1, 30, 20, 5, name)
 {
-	_hitPoints = 100; 
-	_maxHitPoints = 100;
-   	_energyPoints = 100;	
-	_maxEnergyPoints = 100; 
-	_level = 1;
-	_meleeAttackDamage = 30; 
-	_rangedAttackDamage = 20; 
-	_armorDamageReduction = 5;
 }
 
 FragTrap::FragTrap(FragTrap const & src)
+	: ClapTrap(src)
 {
-	*this = src;
 }
 
 FragTrap::~FragTrap()
