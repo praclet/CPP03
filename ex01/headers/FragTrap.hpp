@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:18:11 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/24 16:24:05 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 11:49:26 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 
 class FragTrap
 {
-		int _hitPoints;
-		int _maxHitPoints;
-		int _energyPoints;
-		int _maxEnergyPoints;
-		int _level;
-		int _meleeAttackDamage;
-		int _rangedAttackDamage;
-		int _armorDamageReduction;
+		unsigned int _hitPoints;
+		unsigned int _maxHitPoints;
+		unsigned int _energyPoints;
+		unsigned int _maxEnergyPoints;
+		unsigned int _level;
+		unsigned int _meleeAttackDamage;
+		unsigned int _rangedAttackDamage;
+		unsigned int _armorDamageReduction;
 		std::string _name;
 		void _checkVitals(void);
 		FragTrap();

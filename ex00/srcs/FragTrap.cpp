@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:17:57 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/24 16:28:14 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 13:35:59 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ FragTrap::FragTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
 {
 }
 
-FragTrap::FragTrap(FragTrap const & src)
+FragTrap::FragTrap(FragTrap const & src) : _hitPoints(src._hitPoints),
+	_maxHitPoints(src._maxHitPoints), _energyPoints(src._energyPoints),
+	_maxEnergyPoints(src._maxEnergyPoints), _level(src._level),
+	_meleeAttackDamage(src._meleeAttackDamage), _rangedAttackDamage(src._rangedAttackDamage),
+	_armorDamageReduction(src._armorDamageReduction), _name(src._name)
 {
-	*this = src;
 }
 
 FragTrap::~FragTrap()
@@ -36,10 +39,6 @@ FragTrap::~FragTrap()
 
 void FragTrap::_checkVitals(void)
 {
-	if (_hitPoints < 0)
-		_hitPoints = 0;
-	if (_energyPoints < 0)
-		_energyPoints = 0;
 	if (_hitPoints > _maxHitPoints)
 		_hitPoints = _maxHitPoints;
 	if (_energyPoints > _maxEnergyPoints)
@@ -57,6 +56,7 @@ FragTrap & FragTrap::operator = (FragTrap const & src)
 	_meleeAttackDamage = src._meleeAttackDamage;
 	_rangedAttackDamage = src._rangedAttackDamage;
 	_armorDamageReduction = src._armorDamageReduction;
+	_checkVitals();
 	return (*this);
 }
 
@@ -76,7 +76,14 @@ void FragTrap::meleeAttack(std::string const & target)
 
 void FragTrap::takeDamage(unsigned int amount)
 {
-	_hitPoints -= amount - _armorDamageReduction;
+	if (amount >= _armorDamageReduction)
+	{
+		amount -= _armorDamageReduction;
+		if (amount < _hitPoints)
+			_hitPoints -= amount;
+		else
+			_hitPoints = 0;
+	}
 	_checkVitals();
 	std::cout << "FR4G-TP " << _name << " takes " << amount;
 	std::cout << " damages (before armor damage reduction ) and has now ";
@@ -115,4 +122,3 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 	std::cout << _meleeAttackDamage << " points of damage!" << std::endl;
 	std::cout << "It, now, has " << _energyPoints << " energy points." << std::endl;
 }
-

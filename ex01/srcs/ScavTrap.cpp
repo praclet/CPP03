@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 10:27:28 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/26 11:24:30 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 13:51:37 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ ScavTrap::ScavTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
 {
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src)
+ScavTrap::ScavTrap(ScavTrap const & src) : _hitPoints(src._hitPoints),
+	_maxHitPoints(src._maxHitPoints), _energyPoints(src._energyPoints),
+	_maxEnergyPoints(src._maxEnergyPoints), _level(src._level),
+	_meleeAttackDamage(src._meleeAttackDamage), _rangedAttackDamage(src._rangedAttackDamage),
+	_armorDamageReduction(src._armorDamageReduction), _name(src._name)
 {
-	*this = src;
 }
 
 ScavTrap::~ScavTrap()
@@ -36,10 +39,6 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::_checkVitals(void)
 {
-	if (_hitPoints < 0)
-		_hitPoints = 0;
-	if (_energyPoints < 0)
-		_energyPoints = 0;
 	if (_hitPoints > _maxHitPoints)
 		_hitPoints = _maxHitPoints;
 	if (_energyPoints > _maxEnergyPoints)
@@ -57,6 +56,7 @@ ScavTrap & ScavTrap::operator = (ScavTrap const & src)
 	_meleeAttackDamage = src._meleeAttackDamage;
 	_rangedAttackDamage = src._rangedAttackDamage;
 	_armorDamageReduction = src._armorDamageReduction;
+	_checkVitals();
 	return (*this);
 }
 
@@ -76,7 +76,14 @@ void ScavTrap::meleeAttack(std::string const & target)
 
 void ScavTrap::takeDamage(unsigned int amount)
 {
-	_hitPoints -= amount - _armorDamageReduction;
+	if (amount >= _armorDamageReduction)
+	{
+		amount -= _armorDamageReduction;
+		if (amount < _hitPoints)
+			_hitPoints -= amount;
+		else
+			_hitPoints = 0;
+	}
 	_checkVitals();
 	std::cout << "SCAV-TP " << _name << " takes " << amount;
 	std::cout << " damages (before armor damage reduction) and has now ";
