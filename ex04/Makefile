@@ -1,6 +1,10 @@
-NAME			:=	
+NAME			:=	ex04
 
-SRCS			:=	
+SRCS			:=	main.cpp \
+					FragTrap.cpp \
+					ScavTrap.cpp \
+					ClapTrap.cpp \
+					NinjaTrap.cpp
 
 SRCS_DIR		:=	./srcs/
 HEADERS_DIR		:=	./headers/
@@ -18,7 +22,7 @@ OBJS			:=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 DEP				:=	$(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
 
 CC				:=	clang++
-CFLAGS			:=	-Wall -Wextra -Werror -I$(HEADERS_DIR)
+CFLAGS			:=	-std=c++98 -Wall -Wextra -Werror -I$(HEADERS_DIR)
 DEPFLAGS		=	-MT $@ -MMD -MP -MF $(DEP_DIR)$*.d
 
 all				:	$(NAME)

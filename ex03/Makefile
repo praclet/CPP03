@@ -3,7 +3,8 @@ NAME			:=	ex03
 SRCS			:=	main.cpp \
 					FragTrap.cpp \
 					ScavTrap.cpp \
-					ClapTrap.cpp
+					ClapTrap.cpp \
+					NinjaTrap.cpp
 
 SRCS_DIR		:=	./srcs/
 HEADERS_DIR		:=	./headers/
