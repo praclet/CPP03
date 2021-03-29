@@ -4,7 +4,8 @@ SRCS			:=	main.cpp \
 					FragTrap.cpp \
 					ScavTrap.cpp \
 					ClapTrap.cpp \
-					NinjaTrap.cpp
+					NinjaTrap.cpp \
+					SuperTrap.cpp
 
 SRCS_DIR		:=	./srcs/
 HEADERS_DIR		:=	./headers/

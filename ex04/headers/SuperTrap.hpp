@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 10:26:50 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/29 14:46:38 by praclet          ###   ########lyon.fr   */
+/*   Created: 2021/03/29 14:49:09 by praclet           #+#    #+#             */
+/*   Updated: 2021/03/29 14:56:05 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-# define NINJATRAP_HPP
+#ifndef SUPERTRAP_HPP
+# define SUPERTRAP_HPP
 
 # include <string>
 # include "ClapTrap.hpp"
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class NinjaTrap : public virtual ClapTrap
+class SuperTrap : public FragTrap, public NinjaTrap
 {
 	protected:
-		NinjaTrap();
-		void _displayMsg(ClapTrap const & opponent, std::string className) const;
+		SuperTrap();
 	public:
-		NinjaTrap(std::string name);
-		NinjaTrap(NinjaTrap const & src);
-		~NinjaTrap();
-		void ninjaShoebox(NinjaTrap const & opponent) const;
-		void ninjaShoebox(ClapTrap const & opponent) const;
-		void ninjaShoebox(FragTrap const & opponent) const;
-		void ninjaShoebox(ScavTrap const & opponent) const;
+		SuperTrap(std::string name);
+		SuperTrap(SuperTrap const & src);
+		~SuperTrap();
 };
 
 #endif
