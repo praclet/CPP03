@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:42:51 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/28 14:39:38 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 09:33:06 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "CLAPTRAP " << _name << " gains " << amount;
 	std::cout << " hit points and has now " << _hitPoints << " hit points.";
 	std::cout << std::endl;
+}
+
+std::string const & ClapTrap::getName(void) const
+{
+	return _name;
 }

@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:43:01 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/28 13:56:03 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/29 09:33:11 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class ClapTrap
 		void meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		std::string const & getName(void) const;
 };
 
 #endif
