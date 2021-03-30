@@ -60,4 +60,26 @@ int main(void)
 	n10->challengeNewComer("some guy");
 	n10->beRepaired(120);
 	delete n10;
+
+	ClapTrap n78("Number 78");
+	n78.takeDamage(2);
+	n78.rangedAttack("Mob #5");
+	n78.takeDamage(12);
+	n78.takeDamage(25);
+	n78.meleeAttack("Mob #65");
+	n78.meleeAttack("Mob #247");
+	n78.takeDamage(250);
+
+	ClapTrap *n0 = new ClapTrap("Number 0");
+	n0->takeDamage(25);
+	n0->takeDamage(200);
+	n0->challengeNewComer("some guy");
+	n0->challengeNewComer("some guy");
+	n0->beRepaired(12);
+	n0->challengeNewComer("some guy");
+	n0->challengeNewComer("some guy");
+	n0->beRepaired(12);
+	n0->challengeNewComer("some guy");
+	n0->beRepaired(120);
+	delete n0;
 };
