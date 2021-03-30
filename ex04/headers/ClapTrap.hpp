@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:43:01 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/29 10:02:00 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:24:11 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class ClapTrap
 		void _checkVitals(void);
 		ClapTrap();
 	public:
-		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & src);
 		ClapTrap(unsigned int hitPoints, unsigned int maxHitPoints,
 			unsigned int energyPoints, unsigned int maxEnergyPoints,

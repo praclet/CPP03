@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:17:57 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/28 17:51:22 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:16:23 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,24 @@
 
 FragTrap::FragTrap()
 {
+	std::cout << "FragTrap default constructor" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name)
 	: ClapTrap(100, 100, 100, 100, 1, 30, 20, 5, name)
 {
+	std::cout << "FragTrap name constructor" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const & src)
 	: ClapTrap(src)
 {
+	std::cout << "FragTrap copy constructor" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
+	std::cout << "FragTrap destructor" << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target)
