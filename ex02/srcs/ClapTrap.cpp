@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:42:51 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/30 12:50:09 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:38:35 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap()
 	std::cout << "ClapTrap default constructor." << std::endl;
 }
 
-ClapTrap(unsigned int hitPoints, unsigned int maxHitPoints,
+ClapTrap::ClapTrap(unsigned int hitPoints, unsigned int maxHitPoints,
 	unsigned int energyPoints, unsigned int maxEnergyPoints,
 	unsigned int level, unsigned int meleeAttackDamage,
 	unsigned int rangedAttackDamage, unsigned int armorDamageReduction,

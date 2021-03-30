@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:49:58 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/26 11:23:16 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:40:16 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int main(void)
 {
@@ -78,7 +79,6 @@ int main(void)
 	n0->beRepaired(120);
 	delete n0;
 
-
 	NinjaTrap n18("Number 18");
 	n18.takeDamage(2);
 	n18.rangedAttack("Mob #5");
@@ -87,6 +87,9 @@ int main(void)
 	n18.meleeAttack("Mob #65");
 	n18.meleeAttack("Mob #247");
 	n18.takeDamage(250);
+	n18.ninjaShoebox(n78);
+	n18.ninjaShoebox(n8);
+	n18.ninjaShoebox(n1);
 
 	NinjaTrap *n9 = new NinjaTrap("Number 9");
 	n9->takeDamage(25);
@@ -94,5 +97,9 @@ int main(void)
 	n9->beRepaired(12);
 	n9->beRepaired(12);
 	n9->beRepaired(120);
+	n9->ninjaShoebox(n18);
 	delete n0;
+
+
+
 };

@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:49:58 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/26 11:23:16 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:38:06 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int main(void)
 	n10->beRepaired(120);
 	delete n10;
 
-	ClapTrap n78("Number 78");
+	ClapTrap n78(100,100,100,100,1,12,21,9,"Number 78");
 	n78.takeDamage(2);
 	n78.rangedAttack("Mob #5");
 	n78.takeDamage(12);
@@ -70,16 +70,11 @@ int main(void)
 	n78.meleeAttack("Mob #247");
 	n78.takeDamage(250);
 
-	ClapTrap *n0 = new ClapTrap("Number 0");
+	ClapTrap *n0 = new ClapTrap(100,100,100,100,1,12,21,9,"Number 0");
 	n0->takeDamage(25);
 	n0->takeDamage(200);
-	n0->challengeNewComer("some guy");
-	n0->challengeNewComer("some guy");
 	n0->beRepaired(12);
-	n0->challengeNewComer("some guy");
-	n0->challengeNewComer("some guy");
 	n0->beRepaired(12);
-	n0->challengeNewComer("some guy");
 	n0->beRepaired(120);
 	delete n0;
 };
