@@ -6,14 +6,14 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:18:11 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/28 11:49:26 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 10:28:16 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
-#include <string>
+# include <string>
 
 class FragTrap
 {

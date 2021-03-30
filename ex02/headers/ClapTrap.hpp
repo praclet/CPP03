@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:43:01 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/29 09:33:11 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 13:05:56 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ class ClapTrap
 		void _checkVitals(void);
 		ClapTrap();
 	public:
-		ClapTrap(std::string name);
+		ClapTrap(unsigned int _hitPoints, unsigned int _maxHitPoints,
+			unsigned int _energyPoints, unsigned int _maxEnergyPoints,
+			unsigned int _level, unsigned int _meleeAttackDamage,
+			unsigned int _rangedAttackDamage, unsigned int _armorDamageReduction,
+			std::string name);
 		ClapTrap(ClapTrap const & src);
 		~ClapTrap();
 		ClapTrap & operator = (ClapTrap const & src);

@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:17:57 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/26 17:11:36 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 13:01:54 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,23 @@
 
 FragTrap::FragTrap()
 {
+	std::cout << "FragTrap default constructor." << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name)
+	: ClapTrap(100, 100, 100, 100, 1, 30, 20, 5, name)
 {
-	_hitPoints = 100; 
-	_maxHitPoints = 100;
-   	_energyPoints = 100;	
-	_maxEnergyPoints = 100; 
-	_level = 1;
-	_meleeAttackDamage = 30; 
-	_rangedAttackDamage = 20; 
-	_armorDamageReduction = 5;
+	std::cout << "FragTrap name constructor." << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const & src)
+FragTrap::FragTrap(FragTrap const & src) : ClapTrap(src)
 {
-	*this = src;
+	std::cout << "FragTrap copy constructor." << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
+	std::cout << "FragTrap destructor." << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target)

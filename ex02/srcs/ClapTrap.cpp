@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:42:51 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/29 09:33:06 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 12:50:09 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,20 @@
 
 ClapTrap::ClapTrap()
 {
+	std::cout << "ClapTrap default constructor." << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name)
+ClapTrap(unsigned int hitPoints, unsigned int maxHitPoints,
+	unsigned int energyPoints, unsigned int maxEnergyPoints,
+	unsigned int level, unsigned int meleeAttackDamage,
+	unsigned int rangedAttackDamage, unsigned int armorDamageReduction,
+	std::string name) : _hitPoints(hitPoints),
+	_maxHitPoints(maxHitPoints), _energyPoints(energyPoints),
+	_maxEnergyPoints(maxEnergyPoints), _level(level),
+	_meleeAttackDamage(meleeAttackDamage), _rangedAttackDamage(rangedAttackDamage),
+	_armorDamageReduction(armorDamageReduction), _name(name)
 {
+	std::cout << "ClapTrap full data constructor." << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src) : _hitPoints(src._hitPoints),
@@ -28,10 +38,12 @@ ClapTrap::ClapTrap(ClapTrap const & src) : _hitPoints(src._hitPoints),
 	_meleeAttackDamage(src._meleeAttackDamage), _rangedAttackDamage(src._rangedAttackDamage),
 	_armorDamageReduction(src._armorDamageReduction), _name(src._name)
 {
+	std::cout << "ClapTrap copy constructor." << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
+	std::cout << "ClapTrap destructor." << std::endl;
 }
 
 void ClapTrap::_checkVitals(void)
@@ -44,6 +56,7 @@ void ClapTrap::_checkVitals(void)
 
 ClapTrap & ClapTrap::operator = (ClapTrap const & src)
 {
+	std::cout << "ClapTrap operator=." << std::endl;
 	_hitPoints = src._hitPoints;
 	_maxHitPoints = src._maxHitPoints;
 	_energyPoints = src._energyPoints;
