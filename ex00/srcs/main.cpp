@@ -22,8 +22,8 @@ int main(void)
 	n1.rangedAttack("Mob #512");
 	n1.takeDamage(12);
 	n1.takeDamage(25);
-	n1.meleeAttack("Mob #512");
-	n1.meleeAttack("Mob #512");
+	n1.meleeAttack("Mob #1024");
+	n1.meleeAttack("Mob #568");
 	n1.takeDamage(250);
 
 	FragTrap *n4 = new FragTrap("Number 4");

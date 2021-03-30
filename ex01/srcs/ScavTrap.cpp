@@ -16,6 +16,7 @@
 
 ScavTrap::ScavTrap()
 {
+	std::cout << "ScavTrap default constructor." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
@@ -23,6 +24,7 @@ ScavTrap::ScavTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
 	_meleeAttackDamage(20), _rangedAttackDamage(15), _armorDamageReduction(3),
 	_name(name)
 {
+	std::cout << "ScavTrap name constructor." << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src) : _hitPoints(src._hitPoints),
@@ -31,10 +33,12 @@ ScavTrap::ScavTrap(ScavTrap const & src) : _hitPoints(src._hitPoints),
 	_meleeAttackDamage(src._meleeAttackDamage), _rangedAttackDamage(src._rangedAttackDamage),
 	_armorDamageReduction(src._armorDamageReduction), _name(src._name)
 {
+	std::cout << "ScavTrap copy constructor." << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
+	std::cout << "ScavTrap destructor." << std::endl;
 }
 
 void ScavTrap::_checkVitals(void)

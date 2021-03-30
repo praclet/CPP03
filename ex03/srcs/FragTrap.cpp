@@ -17,20 +17,24 @@
 
 FragTrap::FragTrap()
 {
+	std::cout << "FragTrap default constructor." << std::endl;
 }
 
 FragTrap::FragTrap(std::string name)
 	: ClapTrap(100, 100, 100, 100, 1, 30, 20, 5, name)
 {
+	std::cout << "FragTrap name constructor." << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const & src)
 	: ClapTrap(src)
 {
+	std::cout << "FragTrap copy constructor." << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
+	std::cout << "FragTrap destructor." << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target)

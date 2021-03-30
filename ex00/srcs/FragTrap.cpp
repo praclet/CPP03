@@ -16,6 +16,7 @@
 
 FragTrap::FragTrap()
 {
+	std::cout << "FragTrap default constructor." << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
@@ -23,6 +24,7 @@ FragTrap::FragTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
 	_meleeAttackDamage(30), _rangedAttackDamage(20), _armorDamageReduction(5),
 	_name(name)
 {
+	std::cout << "FragTrap name constructor." << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const & src) : _hitPoints(src._hitPoints),
@@ -31,10 +33,12 @@ FragTrap::FragTrap(FragTrap const & src) : _hitPoints(src._hitPoints),
 	_meleeAttackDamage(src._meleeAttackDamage), _rangedAttackDamage(src._rangedAttackDamage),
 	_armorDamageReduction(src._armorDamageReduction), _name(src._name)
 {
+	std::cout << "FragTrap copy constructor." << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
+	std::cout << "FragTrap destructor." << std::endl;
 }
 
 void FragTrap::_checkVitals(void)

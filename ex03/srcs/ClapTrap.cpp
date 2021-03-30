@@ -16,6 +16,7 @@
 
 ClapTrap::ClapTrap()
 {
+	std::cout << "ClapTrap default constructor." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name)
@@ -28,6 +29,7 @@ ClapTrap::ClapTrap(ClapTrap const & src) : _hitPoints(src._hitPoints),
 	_meleeAttackDamage(src._meleeAttackDamage), _rangedAttackDamage(src._rangedAttackDamage),
 	_armorDamageReduction(src._armorDamageReduction), _name(src._name)
 {
+	std::cout << "ClapTrap copy constructor." << std::endl;
 }
 
 ClapTrap::ClapTrap(unsigned int hitPoints, unsigned int maxHitPoints,
@@ -41,10 +43,12 @@ ClapTrap::ClapTrap(unsigned int hitPoints, unsigned int maxHitPoints,
 	_rangedAttackDamage(rangedAttackDamage),
 	_armorDamageReduction(armorDamageReduction), _name(name)
 {
+	std::cout << "ClapTrap full data constructor." << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
+	std::cout << "ClapTrap destructor." << std::endl;
 }
 
 void ClapTrap::_checkVitals(void)

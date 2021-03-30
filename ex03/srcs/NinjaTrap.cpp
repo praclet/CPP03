@@ -19,6 +19,7 @@
 
 NinjaTrap::NinjaTrap()
 {
+	std::cout << "NinjaTrap default constructor." << std::endl;
 }
 
 void NinjaTrap::_displayMsg(ClapTrap const & opponent, std::string className) const
@@ -32,14 +33,17 @@ void NinjaTrap::_displayMsg(ClapTrap const & opponent, std::string className) co
 NinjaTrap::NinjaTrap(std::string name)
 	: ClapTrap(60, 60, 120, 120, 1, 60, 5, 0, name)
 {
+	std::cout << "NinjaTrap name constructor." << std::endl;
 }
 
 NinjaTrap::NinjaTrap(NinjaTrap const & src) : ClapTrap(src)
 {
+	std::cout << "NinjaTrap copy constructor." << std::endl;
 }
 
 NinjaTrap::~NinjaTrap()
 {
+	std::cout << "NinjaTrap destructor." << std::endl;
 }
 
 void NinjaTrap::ninjaShoebox(NinjaTrap const & opponent) const
