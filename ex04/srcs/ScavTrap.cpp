@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 10:27:28 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/28 18:05:25 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 09:15:58 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,23 @@
 
 ScavTrap::ScavTrap()
 {
+	std::cout << "ScavTrap default constructor." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
 	: ClapTrap(100, 100, 100, 100, 1, 20, 15, 3, name)
 {
+	std::cout << "ScavTrap name constructor." << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src)
 {
+	std::cout << "ScavTrap copy constructor." << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
+	std::cout << "ScavTrap destructor." << std::endl;
 }
 
 void ScavTrap::challengeNewComer(std::string const & target)
