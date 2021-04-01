@@ -6,20 +6,20 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:49:58 by praclet           #+#    #+#             */
-/*   Updated: 2021/04/01 14:21:42 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 15:22:33 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <iostream>
 #include "FragTrap.hpp"
-#include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main(void)
 {
 	srand(time(NULL));
 
-	NinjaTrap n8("Number eight");
+	SuperTrap n8("Number eight");
 	n8.rangedAttack("Mob #30");
 	n8.takeDamage(12);
 	n8.takeDamage(25);
@@ -27,7 +27,7 @@ int main(void)
 	n8.meleeAttack("Mob #2");
 	n8.takeDamage(250);
 
-	NinjaTrap *n10 = new NinjaTrap("Number 10");
+	SuperTrap *n10 = new SuperTrap("Number 10");
 	n10->takeDamage(25);
 	n10->takeDamage(200);
 	n10->rangedAttack("Mob #4");

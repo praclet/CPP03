@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:49:09 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/30 09:47:00 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 15:29:32 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define SUPERTRAP_HPP
 
 # include <string>
-# include "ClapTrap.hpp"
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
+# include "NinjaTrap.hpp"
 
 class SuperTrap : public FragTrap, public NinjaTrap
 {

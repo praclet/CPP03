@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:49:58 by praclet           #+#    #+#             */
-/*   Updated: 2021/04/01 14:22:31 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 15:26:30 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,5 @@ int main(void)
 	n9->beRepaired(12);
 	n9->beRepaired(120);
 	n9->ninjaShoebox(n18);
-	delete n0;
-
-
-
+	delete n9;
 };
