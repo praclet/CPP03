@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:42:51 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/30 15:23:42 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 14:46:03 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,14 +96,17 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 	_checkVitals();
 	std::cout << "CLAPTRAP " << _name << " takes " << amount;
-	std::cout << " damages (before armor damage reduction) and has now ";
+	std::cout << " damages (after armor damage reduction) and has now ";
 	std::cout << _hitPoints << " hit points.";
 	std::cout << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	_hitPoints += amount;
+	unsigned int missingPoints = _maxHitPoints - _hitPoints;
+	unsigned int repairPoints = amount > missingPoints ? missingPoints : amount;
+
+	_hitPoints += repairPoints;
 	_checkVitals();
 	std::cout << "CLAPTRAP " << _name << " gains " << amount;
 	std::cout << " hit points and has now " << _hitPoints << " hit points.";

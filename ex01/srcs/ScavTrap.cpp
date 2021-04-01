@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 10:27:28 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/28 13:51:37 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 14:52:51 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap()
 }
 
 ScavTrap::ScavTrap(std::string name) : _hitPoints(100), _maxHitPoints(100),
-   	_energyPoints(100),	_maxEnergyPoints(100), _level(1),
+   	_energyPoints(50),	_maxEnergyPoints(50), _level(1),
 	_meleeAttackDamage(20), _rangedAttackDamage(15), _armorDamageReduction(3),
 	_name(name)
 {
@@ -90,14 +90,17 @@ void ScavTrap::takeDamage(unsigned int amount)
 	}
 	_checkVitals();
 	std::cout << "SCAV-TP " << _name << " takes " << amount;
-	std::cout << " damages (before armor damage reduction) and has now ";
+	std::cout << " damages (after armor damage reduction) and has now ";
 	std::cout << _hitPoints << " hit points.";
 	std::cout << std::endl;
 }
 
 void ScavTrap::beRepaired(unsigned int amount)
 {
-	_hitPoints += amount;
+	unsigned int missingPoints = _maxHitPoints - _hitPoints;
+	unsigned int repairPoints = amount > missingPoints ? missingPoints : amount;
+
+	_hitPoints += repairPoints;
 	_checkVitals();
 	std::cout << "SCAV-TP " << _name << " gains " << amount;
 	std::cout << " hit points and has now " << _hitPoints << " hit points.";

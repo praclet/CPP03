@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 10:27:28 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/30 13:05:20 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 14:53:24 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap()
 }
 
 ScavTrap::ScavTrap(std::string name)
-	: ClapTrap(100, 100, 100, 100, 1, 20, 15, 3, name)
+	: ClapTrap(100, 100, 50, 50, 1, 20, 15, 3, name)
 {
 	std::cout << "ScavTrap name constructor." << std::endl;
 }

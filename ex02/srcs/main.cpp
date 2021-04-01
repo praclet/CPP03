@@ -6,18 +6,18 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:49:58 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/30 15:38:06 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 14:21:45 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <chrono>
+#include <stdlib.h>
 #include <iostream>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main(void)
 {
-	std::srand(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count());
+	srand(time(NULL));
 
 	FragTrap n1("Number one");
 	n1.rangedAttack("Mob #512");

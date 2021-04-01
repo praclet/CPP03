@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:17:57 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/28 13:35:59 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 14:43:11 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,14 +90,17 @@ void FragTrap::takeDamage(unsigned int amount)
 	}
 	_checkVitals();
 	std::cout << "FR4G-TP " << _name << " takes " << amount;
-	std::cout << " damages (before armor damage reduction ) and has now ";
+	std::cout << " damages (after armor damage reduction ) and has now ";
 	std::cout << _hitPoints << " hit points.";
 	std::cout << std::endl;
 }
 
 void FragTrap::beRepaired(unsigned int amount)
 {
-	_hitPoints += amount;
+	unsigned int missingPoints = _maxHitPoints - _hitPoints;
+	unsigned int repairPoints = amount > missingPoints ? missingPoints : amount;
+
+	_hitPoints += repairPoints;
 	_checkVitals();
 	std::cout << "FR4G-TP " << _name << " gains " << amount;
 	std::cout << " hit points and has now " << _hitPoints << " hit points.";
