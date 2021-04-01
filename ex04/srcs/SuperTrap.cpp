@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:48:12 by praclet           #+#    #+#             */
-/*   Updated: 2021/04/01 15:33:16 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 18:14:53 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ SuperTrap::SuperTrap()
 }
 
 SuperTrap::SuperTrap(std::string name)
-	: ClapTrap(60, 60, 120, 120, 1, 60, 5, 0, name)
+	: ClapTrap(100, 100, 120, 120, 1, 60, 20, 5, name)
 {
 	std::cout << "SuperTrap name constructor." << std::endl;
 }
